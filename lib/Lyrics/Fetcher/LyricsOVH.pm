@@ -10,10 +10,9 @@ use HTTP::Request;
 use Carp;
 
 my $haveLyricsFetcher = 0;
-eval "use Lyrics::Fetcher (qw(\$VERSION \$AGENT)); \$haveLyricsFetcher = 1; 1";
+eval "use Lyrics::Fetcher (qw(\$AGENT)); \$haveLyricsFetcher = 1; 1";
 
-our $VERSION = $haveLyricsFetcher
-        ? $Lyrics::Fetcher::VERSION : '1.00';
+our $VERSION = 0.01;
 
 # the HTTP User-Agent we'll send:
 our $AGENT = ($haveLyricsFetcher && defined $Lyrics::Fetcher::AGENT)
@@ -139,7 +138,7 @@ __END__
 
 =head1 NAME
 
-Lyrics::Fetcher::ApiLyricsOVH - Get song lyrics from api.lyrics.ovh.
+Lyrics::Fetcher::LyricsOVH - Get song lyrics from api.lyrics.ovh.
 
 =head1 SYNOPSIS
 
